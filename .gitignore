@@ -1,0 +1,5 @@
+.*DS*
+bin/
+configs/
+!.gitignore
+!.gitkeep

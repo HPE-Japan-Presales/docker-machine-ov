@@ -1,10 +1,10 @@
-[![Build Status](https://travis-ci.com/HPEJ-Darma/docker-machine-driver-ov.svg?branch=main)](https://travis-ci.com/HPEJ-Darma/docker-machine-driver-ov)
+[![Build Status](https://travis-ci.com/HPE-Japan-Presales/docker-machine-driver-ov.svg?branch=main)](https://travis-ci.com/HPE-Japan-Presales/docker-machine-driver-ov)
 
-[English](/README_jp.md)
+[English](/README_en.md)
 # Docker-Machine/Rancher HPE Servers Driver
 このDocker-Machine/RancherドライバーはHPE OneViewで管理されたHPE Serversに向けて作成されています。  
 Serverハードウェアの設定からOSのインストール、DockerまたはRancher Kubernetesのインストールまでを自動化します。  
-Hewlett Packardのレポジトリには既に*[docker-machine-oneview](https://github.com/HewlettPackard/docker-machine-oneview)*がありますが、メンテナンスを終了している様子なのでこのドライバーを作成しました。
+Hewlett Packardのレポジトリには既に[docker-machine-oneview](https://github.com/HewlettPackard/docker-machine-oneview)がありますが、メンテナンスを終了している様子なのでこのドライバーを作成しました。
 
 ## テスト環境
 

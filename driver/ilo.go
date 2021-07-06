@@ -208,7 +208,7 @@ func (ilo *IloClient) GetVirtualMedia() error {
 					}
 				}
 				if mediaType == "Floppy" {
-					log.Info("iLO4 DVD virtual media detected")
+					log.Info("iLO4 Floppy virtual media detected")
 					log.Debugf("Virtual Floppy: %#v", virtualMedia)
 					virtualDevices.Floppy = IloVirtualMedia{
 						Id:         virtualMedia.Id,
@@ -232,7 +232,7 @@ func (ilo *IloClient) GetVirtualMedia() error {
 
 			for _, mediaType := range virtualMedia.MediaTypes {
 				if mediaType == "DVD" {
-					log.Info("iLO4 DVD virtual media detected")
+					log.Info("iLO5 DVD virtual media detected")
 					log.Debugf("Virtual DVD: %#v", virtualMedia)
 					virtualDevices.Dvd = IloVirtualMedia{
 						Id:         virtualMedia.Id,
@@ -244,7 +244,7 @@ func (ilo *IloClient) GetVirtualMedia() error {
 					}
 				}
 				if mediaType == "Floppy" {
-					log.Info("iLO4 Floppy virtual media detected")
+					log.Info("iLO5 Floppy virtual media detected")
 					log.Debugf("Virtual Floppy: %#v", virtualMedia)
 					virtualDevices.Floppy = IloVirtualMedia{
 						Id:         virtualMedia.Id,

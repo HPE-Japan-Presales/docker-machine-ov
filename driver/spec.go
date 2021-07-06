@@ -76,42 +76,42 @@ var mcnFlags = []mcnflag.Flag{
 	mcnflag.StringFlag{
 		EnvVar: strings.ToUpper(driverName) + "_ONEVIEW_ENDPOINT",
 		Name:   driverName + "-oneview-endpoint",
-		Usage:  "HPE OneView: OneView Endpoint Address",
+		Usage:  "HPE OneView endpoint URL.",
 		Value:  "https://oneview.hpe.com",
 	},
 	mcnflag.IntFlag{
 		EnvVar: strings.ToUpper(driverName) + "_ONEVIEW_API_VERSION",
 		Name:   driverName + "-oneview-api-version",
-		Usage:  "HPE OneView: OneView API version",
+		Usage:  "HPE OneView API version.",
 		Value:  1800,
 	},
 	mcnflag.StringFlag{
 		EnvVar: strings.ToUpper(driverName) + "_ONEVIEW_USER",
 		Name:   driverName + "-oneview-user",
-		Usage:  "HPE OneView: OneView User",
+		Usage:  "HPE OneView user name. The user should be infrastructure administrator.",
 		Value:  "administrator",
 	},
 	mcnflag.StringFlag{
 		EnvVar: strings.ToUpper(driverName) + "_ONEVIEW_PASSWORD",
 		Name:   driverName + "-oneview-password",
-		Usage:  "HPE OneView: OneView User Password",
+		Usage:  "HPE OneView user password.",
 		Value:  "password",
 	},
 	mcnflag.StringFlag{
 		EnvVar: strings.ToUpper(driverName) + "_ONEVIEW_DOMAIN",
 		Name:   driverName + "-oneview-domain",
-		Usage:  "HPE OneView: (Option) OneView Domain",
+		Usage:  "(Option) HPE OneView domain name.",
 		Value:  "",
 	},
 	mcnflag.StringFlag{
 		EnvVar: strings.ToUpper(driverName) + "_ONEVIEW_SERVER_PROFILE_TEMPLATE",
 		Name:   driverName + "-oneview-server-profile-template",
-		Usage:  "HPE OneView: OneView Server Profile Template Name For Target Server Hardware",
+		Usage:  "HPE OneView server profile template name used when creating target server.",
 	},
 	mcnflag.StringFlag{
 		EnvVar: strings.ToUpper(driverName) + "_ONEVIEW_SERVER_HARDWARE",
 		Name:   driverName + "-oneview-server-hardware",
-		Usage:  "HPE OneView: Traget Server Hardware Name In OneView(EXACTLY Same As OneView Displayed, Need Spaces Between Strings)",
+		Usage:  "HPE OneView server hardware name. This server will be target server. (EXACTLY same name as OneView displayed. There is a case to need spaces between strings when hardware name is displayed with sapces in OneView.)",
 	},
 	/**************
 	New server setting
@@ -119,23 +119,23 @@ var mcnFlags = []mcnflag.Flag{
 	mcnflag.StringFlag{
 		EnvVar: strings.ToUpper(driverName) + "_SERVER_ADDRESS",
 		Name:   driverName + "-server-address",
-		Usage:  "New Server: Target Server Address",
+		Usage:  "Target server IP address.",
 	},
 	mcnflag.StringFlag{
 		EnvVar: strings.ToUpper(driverName) + "_SERVER_ROOT_PASSWORD",
 		Name:   driverName + "-server-root-password",
-		Usage:  "New Server: Target Server Root Password",
+		Usage:  "Target server root user password.",
 		Value:  "password",
 	},
 	mcnflag.StringFlag{
 		EnvVar: strings.ToUpper(driverName) + "_SERVER_KICKSTART_BASE_URL",
 		Name:   driverName + "-server-kickstart-base-url",
-		Usage:  "New Server: Kickstart Image Base URL. If your kickstart is on http://web01/docker/kickstart.iso, you shoud set this value as http://web01/docker.",
+		Usage:  "Kickstart image base URL. If your kickstart iso image is on http://web01/docker/kickstart.iso, you shoud set this value as http://web01/docker.",
 	},
 	mcnflag.StringFlag{
 		EnvVar: strings.ToUpper(driverName) + "_SERVER_OS_URL",
 		Name:   driverName + "-server-os-url",
-		Usage:  "New Server: OS Image URL",
+		Usage:  "OS image URL.",
 	},
 	/**************
 	Common
@@ -143,6 +143,6 @@ var mcnFlags = []mcnflag.Flag{
 	mcnflag.BoolFlag{
 		EnvVar: strings.ToUpper(driverName) + "_DEBUG",
 		Name:   driverName + "-debug",
-		Usage:  "(Option) Debug Flag For This Driver",
+		Usage:  "(Option) Debug flag for this driver.",
 	},
 }

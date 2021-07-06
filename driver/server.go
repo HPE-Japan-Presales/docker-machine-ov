@@ -24,9 +24,8 @@ type Server struct {
 const (
 	defaultShellTimeout    = 1
 	defaultWebTimeout      = 1
-	defaultInstallTimeout  = 3600 //sec
+	defaultInstallTimeout  = 1800 //sec
 	defaultInstallInterval = 30
-	defaultTicker          = 15 //sec
 )
 
 func (s *Server) Validate() error {

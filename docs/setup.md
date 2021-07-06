@@ -89,13 +89,15 @@ $ mkisofs \
 ```
 
 ## キックスタートファイルの作成
-Linux OSインストール用のキックスタートファイルを事前に作成しておく必要があります。キックスタートファイルはWebサーバーに配置する必要があり、ドライバーからHPE iLO Floppy仮想デバイスにマウントされます。 
+Linux OSインストール用のキックスタートファイルを事前に作成しておく必要があります。キックスタートファイルはWebサーバーに配置する必要があり、ドライバーからHPE iLO Floppy仮想デバイスにマウントされます。また、ネットワークは**インターネットに接続可能**なネットワークを構成してください。 
 
 ### 手順例
 キックスタートファイルを作成します。キックスタートファイルには自身の環境に合わせたパラメータを記載してください。あくまで下記の記述は例となりますが、以下の要件を全て満たす必要があります。  
 
 - rootユーザーでパスワードを使ってssh接続可能なこと
 - rootユーザーで公開鍵を使ってssh接続可能なこと
+- インターネット接続可能なネットワークを構成していること
+
 
 ```
 
@@ -157,6 +159,9 @@ xconfig  --startxonboot
 %end
 
 %post
+# hosts
+echo "172.16.14.10  test01.hybrid-lab.local  test01" >> /etc/hosts
+
 # sshd accept root login
 sed -i 's/^#PermitRootLogin yes/PermitRootLogin yes/' /etc/ssh/sshd_config
 sed -i 's/^#PubkeyAuthentication yes/PubkeyAuthentication yes/' /etc/ssh/sshd_config

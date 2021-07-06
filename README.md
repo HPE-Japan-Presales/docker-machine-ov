@@ -8,9 +8,22 @@ Hewlett Packardのレポジトリには既に[docker-machine-oneview](https://gi
 
 ## テスト環境
 
-|  サーバーモデル | OS |  OneViewバージョン  |  Docker-Machineバージョン  |  Rancherバージョン  |  Rancher k8sバージョン  |  その他  |
+### Docker-machine
+
+|  サーバーモデル | OS |  OneViewバージョン  |  Docker-Machineバージョン  |  その他  |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-|   HPE Synergy480 Gen9  |  CentOS 7.8  |   5.30.00  |   0.16.2  |   2.5.7  |     |      | 
+|   HPE Synergy480 Gen9  |  CentOS 7.8  |   5.30.00  |   0.16.2  |    |
+
+
+### Rancher
+
+|  サーバーモデル | OS |  OneViewバージョン  |  Rancherバージョン  |  Rancher k8sバージョン  |  その他  |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+|   HPE Synergy480 Gen9  |  CentOS 7.8  |   5.30.00  |   2.5.7      |  v1.17.17  |      | 
+|   HPE Synergy480 Gen9  |  CentOS 7.8  |   5.30.00  |   2.5.9-rc4  |  v1.17.17  |      | 
+|   HPE Synergy480 Gen9  |  CentOS 7.8  |   5.30.00  |   2.5.9-rc4  |  v1.18.20  |      | 
+|   HPE Synergy480 Gen9  |  CentOS 7.8  |   5.30.00  |   2.5.9-rc4  |  v1.19.12  |      |
+
 
 
 ## 各種手順

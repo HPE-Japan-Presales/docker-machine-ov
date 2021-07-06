@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/HPEJ-Darma/docker-machine-driver-ov.svg?branch=main)](https://travis-ci.com/HPEJ-Darma/docker-machine-driver-ov)
+[![Build Status](https://travis-ci.com/HPE-Japan-Presales/docker-machine-driver-ov.svg?branch=main)](https://travis-ci.com/HPE-Japan-Presales/docker-machine-driver-ov)
 
 [日本語](/README.md)
 

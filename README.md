@@ -22,6 +22,7 @@ Hewlett Packardのレポジトリには既に[docker-machine-oneview](https://gi
 |   HPE Synergy480 Gen9  |  CentOS 7.8  |   5.30.00  |   2.5.9-rc4  |  v1.17.17  |      |  
 |   HPE Synergy480 Gen9  |  CentOS 7.8  |   5.30.00  |   2.5.9-rc4  |  v1.18.20  |      |  　
 |   HPE Synergy480 Gen9  |  CentOS 7.8  |   5.30.00  |   2.5.9-rc4  |  v1.19.12  |      |  　
+|   HPE Synergy480 Gen9  |  CentOS 7.8  |   5.30.00  |   2.5.9-rc4  |  v1.20.8   |      |  　
 
 ## 各種手順
 - [事前準備](docs/setup.md)

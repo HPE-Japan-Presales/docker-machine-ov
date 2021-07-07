@@ -10,7 +10,9 @@ RahcnerからTools > Driversを選択します。
 Node DriversタブからAdd Node Driverを選択します。
 ![](add_node_driver02.png "")
 
+
 Download URLに[Git hub release](https://github.com/HPE-Japan-Presales/docker-machine-ov/releases)のURLを設定します。または環境内のWebサーバーにドライバーをダウンロードして公開した後、そのURLを設定します。
+
 ![](add_node_driver03.png "")
 
 ドライバーのインストールが完了するとドライバーがActiveになります。

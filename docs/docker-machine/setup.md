@@ -4,7 +4,7 @@ Docker-machineでドライバーを使用するための手順を記載してい
 
 ## 作業端末にドライバーをインストールする
 Docker-machineコマンドがインストールされている作業端末にドライバーをインストールします。
-任意のバージョンのドライバーをダウンロードしてください。
+任意のバージョンのドライバーを[ダウンロード](https://github.com/HPE-Japan-Presales/docker-machine-ov/releases)してください。
 
 ```
 $ tar xvf docker-machine-driver-ov-v0.0.10-linux-amd64.tar.gz

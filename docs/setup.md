@@ -10,11 +10,11 @@
 OSはキックスタートを使用してインストールします。OSイメージはWebサーバーに配置する必要があり、ドライバーからHPE iLO DVD仮想デバイスにマウントされます。  
 
 ### 手順例
-以下の例ではCentOS 7を使ってキックスタート用のカスタムイメージを作成しています。
+以下の例ではCentOS 8を使ってキックスタート用のカスタムイメージを作成しています。
 OSイメージを作業端末にダウンロード後、マウントさせます。
 
 ```
-$ mount -t iso9660 -o loop CentOS-7-x86_64-Minimal-2003.iso /mnt
+$ mount -t iso9660 -o loop CentOS-8.3.2011-x86_64-minimal.iso /mnt
 ```
 
 カスタムOSイメージ用のディレクトリを作成して、その中にOSイメージをコピーします。
@@ -24,32 +24,8 @@ $ mkdir image
 $ find /mnt -maxdepth 1 -mindepth 1 -exec cp -rp {} image/ \;  
 ```
 
-**isolinux.cfg**を変更します。
-
-```
-$ vi image/isolinux/isolinux.cfg
-# default vesamenu.c32 <= コメントアウト
-default setup <= 追加
-timeout 10 <= 変更
-
-...
-
-# 以下を追加
-label setup
-  menu default
-  kernel vmlinuz
-  append ks=hd:LABEL=ov-ks:/ks.cfg initrd=initrd.img text
-  
-...
-
-label check
-  menu label Test this ^media & install CentOS 7
-#  menu default  <= コメントアウト
-  kernel vmlinuz
-  append initrd=initrd.img inst.stage2=hd:LABEL=CentOS\x207\x20x86_64 rd.live.check quiet
-```
-
-次に**grub.cfg**を変更します。キックスタートファイルは後続の手順で*ov-ks*というラベルにするため、下記の例だと*inst.ks=hd:LABEL=ov-ks:/ks.cfg*と設定しています。お好きなラベルを設定して下さい。
+**grub.cfg**を変更します。キックスタートファイルは後続の手順で*ov-ks*というラベルにするため、下記の例だと*inst.ks=hd:LABEL=ov-ks:/ks.cfg*と設定しています。お好きなラベルを設定して下さい。
+*inst.stage2=hd:LABEL* で指定するラベルもお好きなラベルを設定してください。
 
 ```
 $ vi image/EFI/BOOT/grub.cfg
@@ -63,23 +39,23 @@ set timeout=10 <= 変更
 
 ### BEGIN /etc/grub.d/10_linux ###
 #以下に変更
-menuentry 'Install CentOS 7 For Rancher/Docker' --class fedora --class gnu-linux --class gnu --class os {
-        linuxefi /images/pxeboot/vmlinuz inst.stage2=hd:LABEL=CentOS\x207\x20x86_64 inst.ks=hd:LABEL=ov-ks:/ks.cfg  quiet
+menuentry 'Install CentOS 8 For Rancher/Docker' --class fedora --class gnu-linux --class gnu --class os {
+        linuxefi /images/pxeboot/vmlinuz inst.stage2=hd:LABEL=CentOS-8-3-2011-x86_64-dvd inst.ks=hd:LABEL=ov-ks:/ks.cfg  quiet
         initrdefi /images/pxeboot/initrd.img
 
 ```
 
-最後にカスタムOSイメージをisoイメージにします。
+最後にカスタムOSイメージをisoイメージにします。*-V*オプションで指定するラベルは*inst.stage2=hd:LABEL* で指定したラベルにしてください。
 
 ```
 $ yum install -y mkisofs
 $ cd image 
 $ mkisofs \
     -v -r -J -T -l -input-charset utf-8 \
-    -o ../CentOS-7-x86_64-Minimal-2003-ks.iso \
+    -o ../CentOS-8.3.2011-x86_64-minimal-ks.iso \
     -b isolinux/isolinux.bin \
     -c isolinux/boot.cat \
-    -V 'CentOS 7 x86_64' \
+    -V 'CentOS-8-3-2011-x86_64-dvd' \
     -no-emul-boot \
     -boot-load-size 4 \
     -boot-info-table \
@@ -100,7 +76,6 @@ Linux OSインストール用のキックスタートファイルを事前に作
 
 
 ```
-
 # Install OS instead of upgrade
 install
 
@@ -114,7 +89,8 @@ rootpw --plaintext password
 lang en_US.UTF-8
 
 # System authorization information
-auth --enableshadow --passalgo=sha512
+#auth --enableshadow --passalgo=sha512 <= auth command is not recommend in CentOS8
+authselect --useshadow --passalgo sha512
 
 # Run the Setup Agent on first boot
 firstboot --enable
@@ -149,7 +125,7 @@ part /boot/efi --fstype="efi" --ondisk=sda --size=1024 --label=bootef --fsoption
 part /boot --fstype="xfs" --ondisk=sda --size=1024 --label=boot
 part pv.186 --fstype="lvmpv" --ondisk=sda --size=1 --grow
 volgroup centos --pesize=4096 pv.186
-logvol / --fstype="xfs" --size=1 --grow --name=root --vgname=centos label="root"
+logvol / --fstype="xfs" --size=1 --grow --name=root --vgname=centos --label=root
 
 # Others
 eula --agreed

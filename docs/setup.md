@@ -166,6 +166,9 @@ echo "172.16.14.10  test01.hybrid-lab.local  test01" >> /etc/hosts
 sed -i 's/^#PermitRootLogin yes/PermitRootLogin yes/' /etc/ssh/sshd_config
 sed -i 's/^#PubkeyAuthentication yes/PubkeyAuthentication yes/' /etc/ssh/sshd_config
 
+# setting to fix OS and Kernel version
+echo "excludepkgs=centos*,kernel*" >> /etc/dnf/dnf.conf
+
 %end
 ```
 

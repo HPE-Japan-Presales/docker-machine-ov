@@ -142,6 +142,12 @@ echo "172.16.14.10  test01.hybrid-lab.local  test01" >> /etc/hosts
 sed -i 's/^#PermitRootLogin yes/PermitRootLogin yes/' /etc/ssh/sshd_config
 sed -i 's/^#PubkeyAuthentication yes/PubkeyAuthentication yes/' /etc/ssh/sshd_config
 
+# fixed OS and Kernel version in the case of Cenos8
+echo "excludepkgs=centos*,kernel*" >> /etc/dnf/dnf.conf
+# fixed OS and Kernel version in the case of Cenos7
+echo "excludepkgs=centos*,kernel*" >> /etc/yum.conf
+
+
 %end
 ```
 

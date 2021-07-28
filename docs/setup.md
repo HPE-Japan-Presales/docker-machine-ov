@@ -147,7 +147,6 @@ echo "excludepkgs=centos*,kernel*" >> /etc/dnf/dnf.conf
 # fixed OS and Kernel version in the case of Cenos7
 echo "excludepkgs=centos*,kernel*" >> /etc/yum.conf
 
-
 %end
 ```
 

@@ -34,7 +34,7 @@ Rancher k8sクラスタを作成します。Add Clusterボタンからクラス�
 ノードドライバー用のパラメータテンプレート作成後、Rancher k8sの各種設定を選択します。設定後、Createボタンからクラスタを作成します。
 ![](cluster_setup02.png "")
 
-プロビジョニングが開始します。HPE OneViewnでサーバープロファイルの作成が開始されます。
+プロビジョニングが開始します。HPE OneViewでサーバープロファイルの作成が開始されます。
 ![](provisioning.png "")
 
 30-40分(環境により異なる)経つとRancher k8sクラスタが完成します。

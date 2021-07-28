@@ -77,7 +77,7 @@ var mcnFlags = []mcnflag.Flag{
 		EnvVar: strings.ToUpper(driverName) + "_ONEVIEW_ENDPOINT",
 		Name:   driverName + "-oneview-endpoint",
 		Usage:  "HPE OneView endpoint URL.",
-		Value:  "https://oneview.hpe.com",
+		Value:  "",
 	},
 	mcnflag.IntFlag{
 		EnvVar: strings.ToUpper(driverName) + "_ONEVIEW_API_VERSION",

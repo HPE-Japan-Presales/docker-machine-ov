@@ -11,7 +11,7 @@ Hewlett Packardのレポジトリには既に[docker-machine-oneview](https://gi
 ### Docker-machine
 |  サーバーモデル | サーバーOS |  OneViewバージョン  |  Docker-Machineバージョン  |  その他  |  
 |  ----  | ---- | ---- | ---- | ---- |  
-|   HPE Synergy480 Gen9  |  CentOS 7.8  |   5.30.00  |   0.16.2  |    |  
+|   HPE Synergy480 Gen9  |  CentOS 7.8/ <br> CentOS 8.3  |   5.30.00  |   0.16.2  |    |  
 
 
 ### Rancher
@@ -19,9 +19,10 @@ Hewlett Packardのレポジトリには既に[docker-machine-oneview](https://gi
 |  サーバーモデル | サーバーOS |  OneViewバージョン  |  Rancherバージョン  |  Rancher k8sバージョン  |  その他  |  
 |  ----  | ---- | ---- | ---- | ---- | ---- |  
 |   HPE Synergy480 Gen9  |  CentOS 7.8  |   5.30.00  |   2.5.7      |  v1.17.17  |      |  
-|   HPE Synergy480 Gen9  |  CentOS 7.8  |   5.30.00  |   2.5.9-rc4  |  v1.17.17  |      |  
-|   HPE Synergy480 Gen9  |  CentOS 7.8  |   5.30.00  |   2.5.9-rc4  |  v1.18.20  |      |  　
-|   HPE Synergy480 Gen9  |  CentOS 7.8  |   5.30.00  |   2.5.9-rc4  |  v1.19.12  |      |  　
+|   HPE Synergy480 Gen9  |  CentOS 7.8/  <br> CentOS 8.3  |   5.30.00  |   2.5.9-rc4  |  v1.17.17  |      |  
+|   HPE Synergy480 Gen9  |  CentOS 7.8/  <br> CentOS 8.3  |   5.30.00  |   2.5.9-rc4  |  v1.18.20  |      |  　
+|   HPE Synergy480 Gen9  |  CentOS 7.8/  <br> CentOS 8.3  |   5.30.00  |   2.5.9-rc4  |  v1.19.12  |      |  　
+|   HPE Synergy480 Gen9  |  CentOS 7.8/  <br> CentOS 8.3  |   5.30.00  |   2.5.9-rc4  |  v1.20.8   |      |  　
 
 ## 各種手順
 - [事前準備](docs/setup.md)
